@@ -7,54 +7,57 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      round1Yes: '',
-      round1no: "",
-      round2yes: "",
-      round2no: "",
+      round1Yes: 0,
+      round1No: 0,
+      round2Yes: 0,
+      round2No: 0,
     };
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmitRound1Yes = this.handleSubmitRound1Yes.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
     this.handleSubmitRound1No = this.handleSubmitRound1No.bind(this);
     this.handleSubmitRound2Yes = this.handleSubmitRound2Yes.bind(this);
     this.handleSubmitRound2No = this.handleSubmitRound2No.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  }
+  // handleChange(e) {
+  //   this.setState({
+  //     [e.target.name]: e.target.value
+  //   });
+  // }
 
   handleSubmitRound1Yes(e) {
     e.preventDefault(); 
-    
-    console.log('inside handlesubmitr1Y')
-    // console.log(this.state.round1Yes) //before vote
-    // this.setState({ round1Yes: this.state.round1Yes += 1});
-    // console.log(this.state.round1Yes) // after vote
-    // db.collection("rounds").doc("round1").set({
-    //   count: this.state.round1Yes
-    // });
+    // console.log('inside handlesubmitr1Y')
+    console.log(this.state.round1Yes) //before vote
+    this.setState({ round1Yes: this.state.round1Yes += 1});
+    console.log(this.state.round1Yes) // after vote
   }
-
   handleSubmitRound1No(e) {
-    db.collection("rounds")
-      .doc("round1No")
-      .set(); // fix
+    e.preventDefault(); 
+    // console.log('inside handlesubmitr1Y')
+    console.log(this.state.round1No) //before vote
+    this.setState({ round1No: this.state.round1No += 1});
+    console.log(this.state.round1No) // after vote
   }
-
   handleSubmitRound2Yes(e) {
-    db.collection("rounds")
-      .doc("round2Yes")
-      .set(); // fix
+    e.preventDefault(); 
+    // console.log('inside handlesubmitr1Y')
+    console.log(this.state.round2Yes) //before vote
+    this.setState({ round2Yes: this.state.round2Yes += 1});
+    console.log(this.state.round2Yes) // after vote
   }
-
   handleSubmitRound2No(e) {
-    db.collection("rounds")
-      .doc("round2No")
-      .set(); // fix
+    e.preventDefault(); 
+    // console.log('inside handlesubmitr1Y')
+    console.log(this.state.round2No) //before vote
+    this.setState({ round2No: this.state.round2No += 1});
+    console.log(this.state.round2No) // after vote
   }
 
+  // add this to work right before component unmounts?
+  // db.collection("rounds").doc("round1").set({
+  //   count: this.state.round1Yes
+  // });
   componentDidMount() {
     let w = [];
     db.collection("rounds")
@@ -103,32 +106,6 @@ class App extends Component {
         this.setState({ round2No: z[0] })
         console.log(this.state.round2No);
       })
-      
-      
-      
-      
-      
-
-      // db.collection("rounds")
-      // .doc("round1No")
-      // .get()
-      // .then(function(doc) {
-      //   console.log(doc.data());
-      // });
-
-      // db.collection("rounds")
-      // .doc("round2Yes")
-      // .get()
-      // .then(function(doc) {
-      //   console.log(doc.data());
-      // });
-
-      // db.collection("rounds")
-      // .doc("round2No")
-      // .get()
-      // .then(function(doc) {
-      //   console.log(doc.data());
-      // });
   }
 
   render() {
@@ -143,13 +120,11 @@ class App extends Component {
         </div>
 
         <h3>Display</h3>
-        <button onSubmit={this.handleSubmitRound1Yes}>Round 1: Yes</button>
-        <button>Round 2: No</button>
-
-        <div>Round 1 yes: {this.state.round1yes}</div>
-        <div>Round 1 no: {this.state.round1no}</div>
-        <div>Round 2 yes: {this.state.round2yes}</div>
-        <div>Round 2 no: {this.state.round2no}</div>
+        <button onClick={this.handleSubmitRound1Yes}>Round 1: Yes</button>
+        <button onClick={this.handleSubmitRound1No}>Round 1: No</button>
+        <button onClick={this.handleSubmitRound2Yes}>Round 2: Yes</button>
+        <button onClick={this.handleSubmitRound2No}>Round 2: No</button>
+    
       </div>
     );
   }
