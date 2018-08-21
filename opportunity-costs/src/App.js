@@ -57,10 +57,6 @@ class App extends Component {
 
   componentDidMount() {
     let w = [];
-    let x;
-    let y;
-    let z;
-
     db.collection("rounds")
       .doc("round1Yes")
       .get()
@@ -70,6 +66,42 @@ class App extends Component {
       .then(data => {
         this.setState({ round1Yes: w[0] })
         console.log(this.state.round1Yes);
+      })
+      
+    let x = [];
+    db.collection("rounds")
+      .doc("round1No")
+      .get()
+      .then(function(query) {
+        x.push(query.data().count);
+      })
+      .then(data => {
+        this.setState({ round1No: x[0] })
+        console.log(this.state.round1No);
+      })
+      
+    let y = [];
+    db.collection("rounds")
+      .doc("round2Yes")
+      .get()
+      .then(function(query) {
+        y.push(query.data().count);
+      })
+      .then(data => {
+        this.setState({ round2Yes: y[0] })
+        console.log(this.state.round2Yes);
+      })
+      
+    let z = [];
+    db.collection("rounds")
+      .doc("round2No")
+      .get()
+      .then(function(query) {
+        z.push(query.data().count);
+      })
+      .then(data => {
+        this.setState({ round2No: z[0] })
+        console.log(this.state.round2No);
       })
       
       
