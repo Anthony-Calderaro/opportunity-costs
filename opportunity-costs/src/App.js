@@ -7,14 +7,16 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      round1yes: "",
+      round1Yes: '',
       round1no: "",
       round2yes: "",
       round2no: "",
-      rounds: []
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmitRound1Yes = this.handleSubmitRound1Yes.bind(this);
+    this.handleSubmitRound1No = this.handleSubmitRound1No.bind(this);
+    this.handleSubmitRound2Yes = this.handleSubmitRound2Yes.bind(this);
+    this.handleSubmitRound2No = this.handleSubmitRound2No.bind(this);
   }
 
   handleChange(e) {
@@ -24,13 +26,15 @@ class App extends Component {
   }
 
   handleSubmitRound1Yes(e) {
-    e.preventDefault(); //.where("yes", "==", true);
-    db.collection("rounds").doc("round1").get().then(function(doc) {
-      console.log(doc.data())
-    })
-    // db.collection("rounds")
-    //   .doc("round1Yes")
-    //   .set(); // fix
+    e.preventDefault(); 
+    
+    console.log('inside handlesubmitr1Y')
+    // console.log(this.state.round1Yes) //before vote
+    // this.setState({ round1Yes: this.state.round1Yes += 1});
+    // console.log(this.state.round1Yes) // after vote
+    // db.collection("rounds").doc("round1").set({
+    //   count: this.state.round1Yes
+    // });
   }
 
   handleSubmitRound1No(e) {
@@ -52,24 +56,47 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let w;
+    let w = [];
     let x;
     let y;
     let z;
 
     db.collection("rounds")
-      .doc("round1")
+      .doc("round1Yes")
       .get()
-      .then(function(doc) {
-        console.log(doc.data());
-      });
+      .then(function(query) {
+        w.push(query.data().count);
+      })
+      .then(data => {
+        this.setState({ round1Yes: w[0] })
+        console.log(this.state.round1Yes);
+      })
+      
+      
+      
+      
+      
 
-    db.collection("rounds")
-      .doc("round2")
-      .get()
-      .then(function(doc) {
-        console.log(doc.data());
-      });
+      // db.collection("rounds")
+      // .doc("round1No")
+      // .get()
+      // .then(function(doc) {
+      //   console.log(doc.data());
+      // });
+
+      // db.collection("rounds")
+      // .doc("round2Yes")
+      // .get()
+      // .then(function(doc) {
+      //   console.log(doc.data());
+      // });
+
+      // db.collection("rounds")
+      // .doc("round2No")
+      // .get()
+      // .then(function(doc) {
+      //   console.log(doc.data());
+      // });
   }
 
   render() {
