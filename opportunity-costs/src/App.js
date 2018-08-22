@@ -12,6 +12,7 @@ class App extends Component {
       round2Yes: 0,
       round2No: 0
     };
+
     this.handleSubmitRound1Yes = this.handleSubmitRound1Yes.bind(this);
     this.handleSubmitRound1No = this.handleSubmitRound1No.bind(this);
     this.handleSubmitRound2Yes = this.handleSubmitRound2Yes.bind(this);
@@ -74,7 +75,7 @@ class App extends Component {
     e.preventDefault();
     console.log("12", this.state.round2Yes);
     // console.log(this.state.round1Yes) //before vote
-    this.setState({ round1Yes: this.state.round1Yes += 1 });
+    this.setState({ round1Yes: (this.state.round1Yes += 1) });
     // console.log(this.state.round1Yes) // after vote
   }
 
@@ -82,7 +83,7 @@ class App extends Component {
     e.preventDefault();
     console.log("13", this.state.round2Yes);
     // console.log(this.state.round1No) //before vote
-    this.setState({ round1No: this.state.round1No += 1 });
+    this.setState({ round1No: (this.state.round1No += 1) });
     // console.log(this.state.round1No) // after vote
   }
 
@@ -90,7 +91,7 @@ class App extends Component {
     e.preventDefault();
     console.log("14", this.state.round2Yes);
     // console.log(this.state.round2Yes) //before vote
-    this.setState({ round2Yes: this.state.round2Yes += 1 });
+    this.setState({ round2Yes: (this.state.round2Yes += 1) });
     // console.log(this.state.round2Yes) // after vote
   }
 
@@ -98,7 +99,7 @@ class App extends Component {
     e.preventDefault();
     console.log("15", this.state.round2Yes);
     // console.log(this.state.round2No) //before vote
-    this.setState({ round2No: this.state.round2No += 1 });
+    this.setState({ round2No: (this.state.round2No += 1) });
     // console.log(this.state.round2No) // after vote
   }
 
@@ -129,21 +130,66 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="slide landing">
-          <i id="logo" className="fas fa-sun" />
-          <h2 className="content">
-            Shine some light on financial risk and return
-          </h2>
-          <i className="fas fa-arrow-circle-down landingi" />
+        <div className="background">
+          <div className="slide landing">
+            <i id="logo" className="fas fa-sun" />
+            <h2 className="content">
+              An Intuitive Understanding of Risks & Costs
+            </h2>
+            <i className="fas fa-arrow-circle-down downArrow" />
+          </div>
+
+          <div className="second">
+            <div className="text">
+              You're probably already familiar with the financial concepts of
+              risk and cost. Have you ever grabbed an umbrella before walking
+              outside, just in case it rains? Maybe you decided to snack on some
+              fruit instead of candy one afternoon, or walk instead of drive.
+              These are examples of decisions we make at the margin which
+              involve our assessment of various risks and costs.
+            </div>
+            <i className="fas fa-arrow-circle-down downArrow" />
+          </div>
+
+          <div className="third">
+            <div className="text">
+              It may be a bit clearer if we run through an example. For our
+              first scenario, let's assume that you have two options. Select
+              option one, and you receive $1. Select option two, and a coin is
+              flipped: heads, you get $2; tails, you receive nothing! Which do
+              you choose?
+            </div>
+            <div className="buttons">
+              <button onClick={this.handleSubmitRound1Yes}>Option 1</button>
+              <button onClick={this.handleSubmitRound1No}>Option 2</button>
+            </div>
+            <i className="fas fa-arrow-circle-down downArrow" />
+          </div>
+
+          <div className="fourth">
+            <div className="text">
+              Interesting choice! So far, there have been (tie to db)__ votes
+              from all of the visitors to this site, and you can see the
+              breakdown in our nifty pie chart below.
+            </div>
+            <div className="pie"> Chart Placeholder</div>
+            <div className="text">
+              This is just a single data point, so let's do one more scenario
+              and see if we can find some interesting correlations!
+            </div>
+            <div className="text">
+              Let's do the same scenario as above, but change the dollar
+              amounts. If you select option 1, you receive $1 million. Select
+              option 2, and we'll flip a coin: heads, you receive $2 million;
+              tails, you receive nothing!
+            </div>
+          </div>
         </div>
-
-        <h3>Display</h3>
-        <button onClick={this.handleSubmitRound1Yes}>Round 1: Yes</button>
-        <button onClick={this.handleSubmitRound1No}>Round 1: No</button>
-        <button onClick={this.handleSubmitRound2Yes}>Round 2: Yes</button>
-        <button onClick={this.handleSubmitRound2No}>Round 2: No</button>
-
-        <div>Sample</div>
+        <div className="footer">
+          <h3>Display</h3>
+          <button onClick={this.handleSubmitRound2Yes}>Round 2: Yes</button>
+          <button onClick={this.handleSubmitRound2No}>Round 2: No</button>
+        </div>
       </div>
     );
   }
