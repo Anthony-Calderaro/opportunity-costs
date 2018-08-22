@@ -160,8 +160,10 @@ class App extends Component {
               you choose?
             </div>
             <div className="buttons">
-              <button onClick={this.handleSubmitRound1Yes}>Option 1</button>
-              <button onClick={this.handleSubmitRound1No}>Option 2</button>
+              <button onClick={this.handleSubmitRound1Yes}>Option 1: $1</button>
+              <button onClick={this.handleSubmitRound1No}>
+                Option 2: Flip for $2
+              </button>
             </div>
             <i className="fas fa-arrow-circle-down downArrow" />
           </div>
@@ -172,8 +174,8 @@ class App extends Component {
               from all of the visitors to this site, and you can see the
               breakdown in our nifty pie chart below.
             </div>
-            <div className="pie"> Chart Placeholder</div>
-            <div className="text">
+            <div className="pie text"> Chart Placeholder</div>
+            <div className="chartSubText">
               This is just a single data point, so let's do one more scenario
               and see if we can find some interesting correlations!
             </div>
@@ -183,12 +185,52 @@ class App extends Component {
               option 2, and we'll flip a coin: heads, you receive $2 million;
               tails, you receive nothing!
             </div>
+            <div className="buttons">
+              <button onClick={this.handleSubmitRound2Yes}>
+                Option 1: $1 million
+              </button>
+              <button onClick={this.handleSubmitRound2No}>
+                Option 2: Flip for $2 million
+              </button>
+            </div>
+            <i className="fas fa-arrow-circle-down downArrow" />
           </div>
-        </div>
-        <div className="footer">
-          <h3>Display</h3>
-          <button onClick={this.handleSubmitRound2Yes}>Round 2: Yes</button>
-          <button onClick={this.handleSubmitRound2No}>Round 2: No</button>
+
+          <div className="fifth">
+            <div className="text">
+              Very interesting! Here's another breakdown of the options from
+              each scenario:
+            </div>
+            <div className="pie text"> Chart Placeholder</div>
+            <div className="chartSubText">
+              What's particularly interesting is the breakout between people who
+              selected option #2 in the first scenario, and option #1 in the
+              second. Why do you think this is?
+            </div>
+            <div className="text">
+              Remember when I said people understand things like risk and cost
+              intuitively? This is another example showcasing that! The first
+              option had immaterial amounts - $1 and $2. Because the amounts are
+              low, the cost associated with choosing the second option is low,
+              and so most people tend to want to try to earn more of an
+              immaterial amount, because they aren't worried about losing it -
+              it's immaterial. But when the amounts become material - say, $1
+              million or $2 million - the opportunity costs of choosing the
+              second option is $1 million! Even though both scenarios have the
+              same risk percentage and rate of return, people will make a
+              different selection based on the nominal costs of each investment.
+            </div>
+            <div className="text">
+              The main point of this is to show that we intuitively analyze
+              risk, return, and cost when making decisions, and yet modern
+              investmentors still emphasize rate of return, without giving as
+              much consideration to the costs or risks of the portfolio. I
+              developed another application called
+              <span className="ray">Ray</span>, which helps investors compare
+              the risk-adjusted yield of individual investments.
+            </div>
+          </div>
+          <div className="footer">Made with <span>luck</span> by <span>Lucky Labs</span></div>
         </div>
       </div>
     );

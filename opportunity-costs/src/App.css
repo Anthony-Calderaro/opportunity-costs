@@ -1,6 +1,7 @@
 .background {
-    background-image: linear-gradient(rgb(50, 50, 50) 65%, white);
-    height: 150rem;
+    background: rgb(50, 50, 50);
+    /* background-image: linear-gradient(rgb(50, 50, 50) 80%, white); */
+    height: 200rem;
 }
 
 .slide {
@@ -33,11 +34,17 @@ h2 {
 
 
 .footer {
-    background: white;
+    color: green;
+    margin: 4% 35%;
 }
 
 .text {
     margin: 0% 15%;
+    color: rgb(225, 225, 225);
+}
+
+.chartSubText {
+    margin: 5% 15%;
     color: rgb(225, 225, 225);
 }
 
@@ -53,4 +60,14 @@ h2 {
     display: flex;
     justify-content: space-around;
     margin: 10% 15%;
+}
+
+.pie {
+    margin: 5% 35%;
+    background: white;
+    height: 10rem;
+}
+
+.ray {
+    color: red;
 }

@@ -5,3 +5,5 @@ CDM -> Pull yes and no votes to set inital state
 Handlesubmit -> Update respective state vote by 1
             -> Push new state to DB
             -> Update graphs dynamically
+
+Add CSS animations for rays shining, rain pouring, coin flips, charts loads, scrolling down, arrow popping up after a certain time on each page and fading out beyond a certain point of the page.
