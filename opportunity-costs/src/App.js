@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import firebase from "./firebase.js";
 import "./App.css";
-import PieChart from './graphs/round1Pie';
+import PieChart from "./graphs/round1Pie";
+import PieChart2 from "./graphs/round2Pie";
 const db = firebase.firestore();
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
       round1No: 0,
       round2Yes: 0,
       round2No: 0,
-      total: 0,
+      total: 0
     };
     this.handleSubmitRound1Yes = this.handleSubmitRound1Yes.bind(this);
     this.handleSubmitRound1No = this.handleSubmitRound1No.bind(this);
@@ -65,7 +66,7 @@ class App extends Component {
       })
       .then(() => {
         this.setState({ round2No: initalRound2NoCount[0] });
-      })
+      });
   }
 
   // On Submit functions for each of the buttons
@@ -77,12 +78,17 @@ class App extends Component {
       .doc("round1Yes")
       .set({
         count: this.state.round1Yes
-      }).then(() => {
-        let x = this.state.round1Yes + this.state.round1No + this.state.round2Yes + this.state.round2No;
+      })
+      .then(() => {
+        let x =
+          this.state.round1Yes +
+          this.state.round1No +
+          this.state.round2Yes +
+          this.state.round2No;
         this.setState({
           total: x
-        })
-      })
+        });
+      });
   };
 
   handleSubmitRound1No = () => {
@@ -93,13 +99,17 @@ class App extends Component {
       .doc("round1No")
       .set({
         count: this.state.round1No
-      }).then(() => {
-        let x = this.state.round1Yes + this.state.round1No + this.state.round2Yes + this.state.round2No;
+      })
+      .then(() => {
+        let x =
+          this.state.round1Yes +
+          this.state.round1No +
+          this.state.round2Yes +
+          this.state.round2No;
         this.setState({
           total: x
-        })
-      })
-
+        });
+      });
   };
 
   handleSubmitRound2Yes = () => {
@@ -110,12 +120,17 @@ class App extends Component {
       .doc("round2Yes")
       .set({
         count: this.state.round2Yes
-      }).then(() => {
-        let x = this.state.round1Yes + this.state.round1No + this.state.round2Yes + this.state.round2No;
+      })
+      .then(() => {
+        let x =
+          this.state.round1Yes +
+          this.state.round1No +
+          this.state.round2Yes +
+          this.state.round2No;
         this.setState({
           total: x
-        })
-      })
+        });
+      });
   };
 
   handleSubmitRound2No = () => {
@@ -124,14 +139,19 @@ class App extends Component {
     });
     db.collection("rounds")
       .doc("round2No")
-      .set({ 
-        count: this.state.round2No 
-      }).then(() => {
-        let x = this.state.round1Yes + this.state.round1No + this.state.round2Yes + this.state.round2No;
+      .set({
+        count: this.state.round2No
+      })
+      .then(() => {
+        let x =
+          this.state.round1Yes +
+          this.state.round1No +
+          this.state.round2Yes +
+          this.state.round2No;
         this.setState({
           total: x
-        })
-      })
+        });
+      });
   };
 
   render() {
@@ -140,7 +160,9 @@ class App extends Component {
         <div className="background">
           <div className="slide landing">
             <i id="logo" className="fas fa-sun" />
-            <h2 className="content">Understanding Risks & Costs Intuitively</h2>
+            <h2 className="content">
+              A Brief Introduction To Risks, Returns, & Costs
+            </h2>
           </div>
           <i className="fas fa-arrow-circle-down downArrow" />
 
@@ -186,78 +208,91 @@ class App extends Component {
             <div className="text">
               But what exactly is the different between a risk and a cost?
               Before diving into technical definitions, let's see if we can't
-              highlight the difference with 2 quick scenarios. In our first example,
-              let's assume that you have two options. Select option one, and you
-              receive $1. Select option two, and a fair coin is flipped: heads, you
-              get $2; tails, you get nothing! Which would you choose?
+              highlight the difference with 2 quick scenarios. In our first
+              example, let's assume that you have two options. Select option
+              one, and you receive $1. Select option two, and a fair coin is
+              flipped: heads, you get $2; tails, you get nothing! Which would
+              you choose?
             </div>
             <div className="buttons">
               <button onClick={this.handleSubmitRound1Yes}>Option 1</button>
-              <button onClick={this.handleSubmitRound1No}>Option 2</button>
+              <button className="b2" onClick={this.handleSubmitRound1No}>
+                Option 2
+              </button>
             </div>
-            <i className="fas fa-arrow-circle-down downArrow" />
+            <i className="fas fa-arrow-circle-down downArrow lower" />
           </div>
 
           <div className="fourth">
             <div className="text">
-              Interesting choice! So far, there have been {this.state.total} votes
-              from all of the visitors to this site, and you can see the
+              Interesting choice! So far, there have been {this.state.total}{" "}
+              votes from all of the visitors to this site, and you can see the
               breakdown in our nifty pie chart below.
             </div>
 
-            <PieChart round1Yes={this.state.round1Yes} round1No={this.state.round1No} />
-            
+            <PieChart
+              round1Yes={this.state.round1Yes}
+              round1No={this.state.round1No}
+            />
+
             <div className="text">
               This is just a single data point, so let's do one more scenario
               and see if we can find some interesting correlations!
             </div>
             <i className="fas fa-arrow-circle-down downArrow pieArrow" />
 
-            <div className="text">
-              Let's do the same scenario as above, but change the dollar
-              amounts. If you select option 1, you receive $1 million. Select
-              option 2, and we'll flip a coin: heads, you receive $2 million;
-              tails, you receive nothing!
+            <div className="text round2">
+              Let's take the same scenario as above, but change the dollar
+              amounts. If you select option 1, you get $1 million. Select option
+              2, and we'll flip a fair coin: heads, you get $2 million; tails,
+              you get nothing!
             </div>
             <div className="buttons">
-              <button onClick={this.handleSubmitRound2Yes}>
-                Option 1: $1 million
-              </button>
-              <button onClick={this.handleSubmitRound2No}>
-                Option 2: Flip for $2 million
+              <button onClick={this.handleSubmitRound2Yes}>Option 1</button>
+              <button className="b2" onClick={this.handleSubmitRound2No}>
+                Option 2
               </button>
             </div>
-            <i className="fas fa-arrow-circle-down downArrow" />
           </div>
+          <i className="fas fa-arrow-circle-down downArrow lower" />
 
           <div className="fifth">
             <div className="text">
-              Very interesting! Here's another breakdown of the options from
+              Interesting pick! Here's another breakdown of the options from
               each scenario:
             </div>
-            <div className="pie text"> Chart Placeholder</div>
-            <div className="chartSubText">
-              What's particularly interesting is the breakout between people who
-              selected option #2 in the first scenario, and option #1 in the
-              second. Why do you think this is?
+
+            <PieChart2
+              round2Yes={this.state.round2Yes}
+              round2No={this.state.round2No}
+            />
+
+            <div className="text break">
+              What's particularly interesting is that a larger portion of
+              individuals chose to flip a coin for $2, but when the potential
+              winnings jumped to $2 million, fewer selected that option. Why do
+              you think this is?
             </div>
+            <i className="fas fa-arrow-circle-down downArrow higher" />
             <div className="text">
-              Remember when I said people understand things like risk and cost
-              intuitively? This is another example showcasing that! The first
-              option had immaterial amounts - $1 and $2. Because the amounts are
-              low, the cost associated with choosing the second option is low,
-              and so most people tend to want to try to earn more of an
-              immaterial amount, because they aren't worried about losing it -
-              it's immaterial. But when the amounts become material - say, $1
-              million or $2 million - the opportunity costs of choosing the
-              second option is $1 million! Even though both scenarios have the
-              same risk percentage and rate of return, people will make a
-              different selection based on the nominal costs of each investment.
+              Remember when I mentioned people understand things like risk and
+              cost intuitively? This is another example showcasing that! The
+              first option had immaterial amounts - $1 and $2. Because the
+              amounts are negligible, the cost associated with accepting the
+              risk of the second option is negligible, and people would tend to
+              go for a higher return when the actual cost is lower. But when the
+              amounts become material - say, $1 million or $2 million - the
+              opportunity costs of choosing the second option is a guarenteed $1
+              million, which as of 2018 is a reasonably large sum of money!
+              You probably noticed that both scenarios have the exact same risk
+              percentage (100% for option 1, 50% for option 2) and the exact same
+              expected return ($1 or $1 million), and yet people still made different
+              selections based on the actual costs of each decision.
             </div>
             <div className="text">
               The main point of this is to show that we intuitively analyze
-              risk, return, and cost when making decisions, and yet modern
-              investmentors still emphasize rate of return, without giving as
+              risk, return, and cost when making decisions. Unfortunately, modern
+              portfolio managers will still emphasize metrics like "rate of return" or ", without giving as
               much consideration to the costs or risks of the portfolio. I
               developed another application called
               <span className="ray">Ray</span>, which helps investors compare
