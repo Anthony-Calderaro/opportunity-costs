@@ -12,7 +12,6 @@ class App extends Component {
       round2Yes: 0,
       round2No: 0
     };
-
     this.handleSubmitRound1Yes = this.handleSubmitRound1Yes.bind(this);
     this.handleSubmitRound1No = this.handleSubmitRound1No.bind(this);
     this.handleSubmitRound2Yes = this.handleSubmitRound2Yes.bind(this);
@@ -20,112 +19,95 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log("1", this.state.round2Yes);
-    let initalRound1YesCount = [];
+    // Set the inital state with the data from the database upon inital load
+
+    let initalRound1YesCount = []; // placeholder to push data to out of query
     db.collection("rounds")
       .doc("round1Yes")
       .get()
-      .then(function(query) {
+      .then(query => {
         initalRound1YesCount.push(query.data().count);
       })
-      .then(data => {
-        console.log("3", this.state.round2Yes);
-        return this.setState({ round1Yes: initalRound1YesCount[0] });
+      .then(() => {
+        this.setState({ round1Yes: initalRound1YesCount[0] });
       });
-    console.log("4", this.state.round2Yes);
-    let initalRound1NoCount = [];
+
+    let initalRound1NoCount = []; // placeholder to push data to out of query
     db.collection("rounds")
       .doc("round1No")
       .get()
-      .then(function(query) {
+      .then(query => {
         initalRound1NoCount.push(query.data().count);
       })
-      .then(data => {
-        console.log("6", this.state.round2Yes);
-        return this.setState({ round1No: initalRound1NoCount[0] });
+      .then(() => {
+        this.setState({ round1No: initalRound1NoCount[0] });
       });
 
-    let initalRound2YesCount = [];
+    let initalRound2YesCount = []; // placeholder to push data to out of query
     db.collection("rounds")
       .doc("round2Yes")
       .get()
-      .then(function(query) {
+      .then(query => {
         initalRound2YesCount.push(query.data().count);
-        console.log(initalRound2YesCount);
       })
-      .then(data => {
+      .then(() => {
         return this.setState({ round2Yes: initalRound2YesCount[0] });
       });
-    console.log("8", this.state.round2Yes);
-    let initalRound2NoCount = [];
+
+    let initalRound2NoCount = []; // placeholder to push data to out of query
     db.collection("rounds")
       .doc("round2No")
       .get()
-      .then(function(query) {
+      .then(query => {
         initalRound2NoCount.push(query.data().count);
-        console.log("9", initalRound2NoCount);
       })
-      .then(data => {
-        console.log("10", this.state.round2Yes);
+      .then(() => {
         return this.setState({ round2No: initalRound2NoCount[0] });
       });
   }
 
-  handleSubmitRound1Yes(e) {
-    e.preventDefault();
-    console.log("12", this.state.round2Yes);
-    // console.log(this.state.round1Yes) //before vote
-    this.setState({ round1Yes: (this.state.round1Yes += 1) });
-    // console.log(this.state.round1Yes) // after vote
-  }
-
-  handleSubmitRound1No(e) {
-    e.preventDefault();
-    console.log("13", this.state.round2Yes);
-    // console.log(this.state.round1No) //before vote
-    this.setState({ round1No: (this.state.round1No += 1) });
-    // console.log(this.state.round1No) // after vote
-  }
-
-  handleSubmitRound2Yes(e) {
-    e.preventDefault();
-    console.log("14", this.state.round2Yes);
-    // console.log(this.state.round2Yes) //before vote
-    this.setState({ round2Yes: (this.state.round2Yes += 1) });
-    // console.log(this.state.round2Yes) // after vote
-  }
-
-  handleSubmitRound2No(e) {
-    e.preventDefault();
-    console.log("15", this.state.round2Yes);
-    // console.log(this.state.round2No) //before vote
-    this.setState({ round2No: (this.state.round2No += 1) });
-    // console.log(this.state.round2No) // after vote
-  }
-
-  // add this to work right before component unmounts?
-  // db.collection("rounds").doc("round1").set({
-  //   count: this.state.round1Yes
-  // });
-
-  componentDidUpdate() {
+  // On Submit functions for each of the buttons
+  handleSubmitRound1Yes = () => {
+    this.setState({
+      round1Yes: (this.state.round1Yes += 1)
+    });
     db.collection("rounds")
       .doc("round1Yes")
-      .set({ count: this.state.round1Yes });
-    console.log("16", this.state.round2Yes);
+      .set({
+        count: this.state.round1Yes
+      });
+  };
+
+  handleSubmitRound1No = () => {
+    this.setState({
+      round1No: (this.state.round1No += 1)
+    });
     db.collection("rounds")
       .doc("round1No")
-      .set({ count: this.state.round1No });
-    console.log("17", this.state.round2Yes);
+      .set({
+        count: this.state.round1No
+      });
+  };
+
+  handleSubmitRound2Yes = () => {
+    this.setState({
+      round2Yes: (this.state.round2Yes += 1)
+    });
     db.collection("rounds")
       .doc("round2Yes")
-      .set({ count: this.state.round2Yes });
-    console.log("18", this.state.round2Yes);
+      .set({
+        count: this.state.round2Yes
+      });
+  };
+
+  handleSubmitRound2No = () => {
+    this.setState({
+      round2No: (this.state.round2No += 1)
+    });
     db.collection("rounds")
       .doc("round2No")
       .set({ count: this.state.round2No });
-    console.log("19", this.state.round2Yes);
-  }
+  };
 
   render() {
     return (
@@ -230,7 +212,9 @@ class App extends Component {
               the risk-adjusted yield of individual investments.
             </div>
           </div>
-          <div className="footer">Made with <span>luck</span> by <span>Lucky Labs</span></div>
+          <div className="footer">
+            Made with <span>luck</span> by <span>Lucky Labs</span>
+          </div>
         </div>
       </div>
     );
