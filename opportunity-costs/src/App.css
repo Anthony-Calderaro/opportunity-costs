@@ -1,8 +1,11 @@
+body {
+    font-family: Helvetica;
+}
 #logo {
   position: absolute;
   font-size: 10rem;
   color: goldenrod;
-  margin: 0 45%;
+  margin: 0% 45%;
   -webkit-animation: rotation 7s infinite linear;
 }
 @-webkit-keyframes rotation {
@@ -29,11 +32,11 @@
 .landing {
   text-align: center;
   color: rgb(225, 225, 225);
-  padding: 5% 0;
+  padding: 5% 0%;
 }
 
 h2 {
-  margin: 15% 0;
+  margin: 15% 0%;
 }
 
 .downArrow {
@@ -70,11 +73,11 @@ h2 {
 }
 
 .rainMatrix {
-  margin: 0 40%;
+  margin: 0% 30%;
 }
 .rainRow1 {
   display: flex;
-  margin: 4% 0;
+  margin: 4% 0%;
   justify-content: space-around;
 }
 .rainRow2 {
@@ -138,6 +141,7 @@ h2 {
       opacity: 1;
     }
   }
+
 .drop2 {
   color: skyblue;
   -webkit-animation: flickerAnimation 1s infinite;
@@ -194,17 +198,29 @@ h2 {
 .brelly {
   color: goldenrod;
   font-size: 10rem;
-  margin: 0 44.5%;
-}
-
-.footer {
-  color: green;
-  margin: 4% 35%;
+  margin: 0% 44.5%;
 }
 
 .text {
-  margin: 0% 15%;
+  margin: 3% 25%;
+  font-size: 1.1rem;
+  line-height: 175%;
   color: rgb(225, 225, 225);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 10% 15%;
+}
+
+button {
+    padding: 4%;
+    color: rgb(50, 50, 50);
+    background: rgb(97, 218, 251);
+    border-radius: 5%;
+    border: skyblue;
+    font-size: 1rem;
 }
 
 .chartSubText {
@@ -213,17 +229,11 @@ h2 {
 }
 
 .third {
-  margin-top: 0 10%;
+  margin-top: 0% 10%;
 }
 
 .second {
-  margin-top: 0 10%;
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-around;
-  margin: 10% 15%;
+  margin-top: 0% 10%;
 }
 
 .pie {
@@ -235,3 +245,8 @@ h2 {
 .ray {
   color: red;
 }
+.footer {
+    color: green;
+    margin: 4% 35%;
+  }
+  

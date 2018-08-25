@@ -115,51 +115,60 @@ class App extends Component {
         <div className="background">
           <div className="slide landing">
             <i id="logo" className="fas fa-sun" />
-            <h2 className="content">An Intuitive Understanding of Risks & Costs</h2>
+            <h2 className="content">Understanding Risks & Costs Intuitively</h2>
           </div>
-            <i className="fas fa-arrow-circle-down downArrow" />
+          <i className="fas fa-arrow-circle-down downArrow" />
 
           <div className="second">
-            <div className='rainMatrix'>
-              <div className='rainRow1'> 
-                <i class="fas fa-tint drop"></i><i class="fas fa-tint drop2"></i>
-                <i class="fas fa-tint drop2"></i><i class="fas fa-tint drop0"></i>
+            <div className="rainMatrix">
+              <div className="rainRow1">
+                <i class="fas fa-tint drop" />
+                <i class="fas fa-tint drop2" />
+                <i class="fas fa-tint drop2" />
+                <i class="fas fa-tint drop0" />
               </div>
-              <div className='rainRow2'> 
-                <i class="fas fa-tint drop2"></i><i class="fas fa-tint drop"></i>
-                <i class="fas fa-tint drop0"></i><i class="fas fa-tint drop2"></i>
+              <div className="rainRow2">
+                <i class="fas fa-tint drop2" />
+                <i class="fas fa-tint drop" />
+                <i class="fas fa-tint drop0" />
+                <i class="fas fa-tint drop2" />
               </div>
-              <div className='rainRow1'> 
-                <i class="fas fa-tint drop0"></i><i class="fas fa-tint drop2"></i>
-                <i class="fas fa-tint drop2"></i><i class="fas fa-tint drop"></i>
+              <div className="rainRow1">
+                <i class="fas fa-tint drop0" />
+                <i class="fas fa-tint drop2" />
+                <i class="fas fa-tint drop2" />
+                <i class="fas fa-tint drop" />
               </div>
             </div>
-            <div className='brelly'>&#9730;</div>
-          
+            <div className="brelly">&#9730;</div>
+
             <div className="text">
               You're probably already familiar with the financial concepts of
-              risk and cost. Have you ever grabbed an umbrella before walking
-              outside, just in case it rains? Maybe you decided to snack on some
-              fruit instead of candy one afternoon, or walk instead of drive.
-              These are examples of decisions we make at the margin which
-              involve our assessment of various risks and costs.
+              risk and cost. Have you ever looked outside when it wasn't
+              raining, noticed it was overcast, and grabbed an umbrella before
+              walking outside just in case? Have you ever been driving quickly
+              around a bend, and slowed down just in case there was a speed trap
+              out of view? These are examples of decisions we make at the margin
+              which involve a basic understanding of risks and costs. No one
+              necessarily teaches us these concepts, but through a combination
+              of intuition and experience, we learn to make these assessments in
+              real-time.
             </div>
-            <i className="fas fa-arrow-circle-down downArrow" />
           </div>
+          <i className="fas fa-arrow-circle-down downArrow" />
 
           <div className="third">
             <div className="text">
-              It may be a bit clearer if we run through an example. For our
-              first scenario, let's assume that you have two options. Select
-              option one, and you receive $1. Select option two, and a coin is
-              flipped: heads, you get $2; tails, you receive nothing! Which do
-              you choose?
+              But what exactly is the different between a risk and a cost?
+              Before diving into technical definitions, let's see if we can't
+              highlight the difference with 2 quick scenarios. In our first example,
+              let's assume that you have two options. Select option one, and you
+              receive $1. Select option two, and a fair coin is flipped: heads, you
+              get $2; tails, you get nothing! Which would you choose?
             </div>
             <div className="buttons">
-              <button onClick={this.handleSubmitRound1Yes}>Option 1: $1</button>
-              <button onClick={this.handleSubmitRound1No}>
-                Option 2: Flip for $2
-              </button>
+              <button onClick={this.handleSubmitRound1Yes}>Option 1</button>
+              <button onClick={this.handleSubmitRound1No}>Option 2</button>
             </div>
             <i className="fas fa-arrow-circle-down downArrow" />
           </div>
