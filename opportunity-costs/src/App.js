@@ -122,6 +122,9 @@ class App extends Component {
           </div>
 
           <div className="second">
+          <div className='brelly'>&#9730;</div>
+          <i class="fas fa-tint drop"></i>
+          
             <div className="text">
               You're probably already familiar with the financial concepts of
               risk and cost. Have you ever grabbed an umbrella before walking
@@ -213,7 +216,7 @@ class App extends Component {
             </div>
           </div>
           <div className="footer">
-            Made with <span>luck</span> by <span>Lucky Labs</span>
+            Made with <span>&#9752;</span> by <span>Lucky Labs</span>
           </div>
         </div>
       </div>
