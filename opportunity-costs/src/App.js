@@ -199,7 +199,7 @@ class App extends Component {
 
           <div className="fourth">
             <div className="text">
-              Interesting choice! So far, there have been (tie to db)__ votes
+              Interesting choice! So far, there have been {this.state.total} votes
               from all of the visitors to this site, and you can see the
               breakdown in our nifty pie chart below.
             </div>
