@@ -122,16 +122,16 @@ class App extends Component {
           <div className="second">
             <div className='rainMatrix'>
               <div className='rainRow1'> 
-                <i class="fas fa-tint drop"></i><i class="fas fa-tint drop0"></i>
-                <i class="fas fa-tint drop"></i><i class="fas fa-tint drop"></i>
+                <i class="fas fa-tint drop"></i><i class="fas fa-tint drop2"></i>
+                <i class="fas fa-tint drop2"></i><i class="fas fa-tint drop0"></i>
               </div>
               <div className='rainRow2'> 
-                <i class="fas fa-tint drop0"></i><i class="fas fa-tint drop"></i>
-                <i class="fas fa-tint drop0"></i><i class="fas fa-tint drop"></i>
+                <i class="fas fa-tint drop2"></i><i class="fas fa-tint drop"></i>
+                <i class="fas fa-tint drop0"></i><i class="fas fa-tint drop2"></i>
               </div>
               <div className='rainRow1'> 
-                <i class="fas fa-tint drop"></i><i class="fas fa-tint drop"></i>
-                <i class="fas fa-tint drop"></i><i class="fas fa-tint drop0"></i>
+                <i class="fas fa-tint drop0"></i><i class="fas fa-tint drop2"></i>
+                <i class="fas fa-tint drop2"></i><i class="fas fa-tint drop"></i>
               </div>
             </div>
             <div className='brelly'>&#9730;</div>
