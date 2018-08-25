@@ -10,7 +10,8 @@ class App extends Component {
       round1Yes: 0,
       round1No: 0,
       round2Yes: 0,
-      round2No: 0
+      round2No: 0,
+      total: 0,
     };
     this.handleSubmitRound1Yes = this.handleSubmitRound1Yes.bind(this);
     this.handleSubmitRound1No = this.handleSubmitRound1No.bind(this);
@@ -51,7 +52,7 @@ class App extends Component {
         initalRound2YesCount.push(query.data().count);
       })
       .then(() => {
-        return this.setState({ round2Yes: initalRound2YesCount[0] });
+        this.setState({ round2Yes: initalRound2YesCount[0] });
       });
 
     let initalRound2NoCount = []; // placeholder to push data to out of query
@@ -62,8 +63,8 @@ class App extends Component {
         initalRound2NoCount.push(query.data().count);
       })
       .then(() => {
-        return this.setState({ round2No: initalRound2NoCount[0] });
-      });
+        this.setState({ round2No: initalRound2NoCount[0] });
+      })
   }
 
   // On Submit functions for each of the buttons
@@ -75,7 +76,12 @@ class App extends Component {
       .doc("round1Yes")
       .set({
         count: this.state.round1Yes
-      });
+      }).then(() => {
+        let x = this.state.round1Yes + this.state.round1No + this.state.round2Yes + this.state.round2No;
+        this.setState({
+          total: x
+        })
+      })
   };
 
   handleSubmitRound1No = () => {
@@ -86,7 +92,13 @@ class App extends Component {
       .doc("round1No")
       .set({
         count: this.state.round1No
-      });
+      }).then(() => {
+        let x = this.state.round1Yes + this.state.round1No + this.state.round2Yes + this.state.round2No;
+        this.setState({
+          total: x
+        })
+      })
+
   };
 
   handleSubmitRound2Yes = () => {
@@ -97,7 +109,12 @@ class App extends Component {
       .doc("round2Yes")
       .set({
         count: this.state.round2Yes
-      });
+      }).then(() => {
+        let x = this.state.round1Yes + this.state.round1No + this.state.round2Yes + this.state.round2No;
+        this.setState({
+          total: x
+        })
+      })
   };
 
   handleSubmitRound2No = () => {
@@ -106,7 +123,14 @@ class App extends Component {
     });
     db.collection("rounds")
       .doc("round2No")
-      .set({ count: this.state.round2No });
+      .set({ 
+        count: this.state.round2No 
+      }).then(() => {
+        let x = this.state.round1Yes + this.state.round1No + this.state.round2Yes + this.state.round2No;
+        this.setState({
+          total: x
+        })
+      })
   };
 
   render() {
