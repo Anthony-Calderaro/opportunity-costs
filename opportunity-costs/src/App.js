@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import firebase from "./firebase.js";
 import "./App.css";
+import PieChart from './graphs/round1Pie';
 const db = firebase.firestore();
 
 class App extends Component {
@@ -203,11 +204,15 @@ class App extends Component {
               from all of the visitors to this site, and you can see the
               breakdown in our nifty pie chart below.
             </div>
-            <div className="pie text"> Chart Placeholder</div>
-            <div className="chartSubText">
+
+            <PieChart round1Yes={this.state.round1Yes} round1No={this.state.round1No} />
+            
+            <div className="text">
               This is just a single data point, so let's do one more scenario
               and see if we can find some interesting correlations!
             </div>
+            <i className="fas fa-arrow-circle-down downArrow pieArrow" />
+
             <div className="text">
               Let's do the same scenario as above, but change the dollar
               amounts. If you select option 1, you receive $1 million. Select
