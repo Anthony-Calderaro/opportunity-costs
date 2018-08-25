@@ -115,15 +115,26 @@ class App extends Component {
         <div className="background">
           <div className="slide landing">
             <i id="logo" className="fas fa-sun" />
-            <h2 className="content">
-              An Intuitive Understanding of Risks & Costs
-            </h2>
-            <i className="fas fa-arrow-circle-down downArrow" />
+            <h2 className="content">An Intuitive Understanding of Risks & Costs</h2>
           </div>
+            <i className="fas fa-arrow-circle-down downArrow" />
 
           <div className="second">
-          <div className='brelly'>&#9730;</div>
-          <i class="fas fa-tint drop"></i>
+            <div className='rainMatrix'>
+              <div className='rainRow1'> 
+                <i class="fas fa-tint drop"></i><i class="fas fa-tint drop0"></i>
+                <i class="fas fa-tint drop"></i><i class="fas fa-tint drop"></i>
+              </div>
+              <div className='rainRow2'> 
+                <i class="fas fa-tint drop0"></i><i class="fas fa-tint drop"></i>
+                <i class="fas fa-tint drop0"></i><i class="fas fa-tint drop"></i>
+              </div>
+              <div className='rainRow1'> 
+                <i class="fas fa-tint drop"></i><i class="fas fa-tint drop"></i>
+                <i class="fas fa-tint drop"></i><i class="fas fa-tint drop0"></i>
+              </div>
+            </div>
+            <div className='brelly'>&#9730;</div>
           
             <div className="text">
               You're probably already familiar with the financial concepts of

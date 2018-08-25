@@ -1,89 +1,188 @@
+#logo {
+  position: absolute;
+  font-size: 10rem;
+  color: goldenrod;
+  margin: 0 45%;
+  -webkit-animation: rotation 7s infinite linear;
+}
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
 .background {
-    background: rgb(50, 50, 50);
-    /* background-image: linear-gradient(rgb(50, 50, 50) 80%, white); */
-    height: 200rem;
-}
-
-.drop {
-    /* Rain Animation: Load a bunch in a matrix, set an animated gradiant 
-    to change color from background to  goldenrod to appear like it's actively raining */
-    color: blue;
-}
-
-.brelly {
-    color: goldenrod;
+  background: rgb(50, 50, 50);
+  /* background-image: linear-gradient(rgb(50, 50, 50) 80%, white); */
+  height: 200rem;
 }
 
 .slide {
-    height: 35rem;
-    display: flex;
-    flex-direction: column;
+  background: rgb(50, 50, 50);
+  display: flex;
+  flex-direction: column;
 }
 
 .landing {
-    color: rgb(225, 225, 225);
-    margin: 0 5%;
-    padding-top: 5%;
-}   
+  text-align: center;
+  color: rgb(225, 225, 225);
+  padding: 5% 0;
+}
 
 h2 {
-    margin: 5% 0;
+  margin: 15% 0;
 }
 
 .downArrow {
-    color: goldenrod;
-    /* padding: 0 51%; */
-    /* margin: 12% 51%; */
+  color: goldenrod;
+  font-size: 2rem;
+  margin: 5% 49%;
+  /* Fade in Animation Part 1 / 2 */
+  -webkit-animation: 3s ease 0s normal forwards 1 fadein;
+  animation: 3s ease 0s normal forwards 1 fadein;
+}
+/* Fade in Animation Part 2 / 2 */
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-#logo {
-    position: absolute;
-    font-size: 10rem;
-    color: goldenrod;
-    margin: 0 49.5%;
-    -webkit-animation: rotation 5s infinite linear;
-}
-@-webkit-keyframes rotation {
-    from {-webkit-transform: rotate(0deg);}
-    to {-webkit-transform: rotate(360deg);}
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
+.rainMatrix {
+  margin: 0 40%;
+}
+.rainRow1 {
+  display: flex;
+  margin: 4% 0;
+  justify-content: space-around;
+}
+.rainRow2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.drop0 {
+  color: skyblue;
+}
+
+.h2 {
+    
+}
+.drop {
+  color: skyblue;
+  -webkit-animation: flickerAnimation 4s infinite;
+  -moz-animation: flickerAnimation 4s infinite;
+  -o-animation: flickerAnimation 4s infinite;
+  animation: flickerAnimation 4s infinite;
+}
+
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.brelly {
+  color: goldenrod;
+  font-size: 10rem;
+  margin: 0 44.5%;
+}
 
 .footer {
-    color: green;
-    margin: 4% 35%;
+  color: green;
+  margin: 4% 35%;
 }
 
 .text {
-    margin: 0% 15%;
-    color: rgb(225, 225, 225);
+  margin: 0% 15%;
+  color: rgb(225, 225, 225);
 }
 
 .chartSubText {
-    margin: 5% 15%;
-    color: rgb(225, 225, 225);
+  margin: 5% 15%;
+  color: rgb(225, 225, 225);
 }
 
 .third {
-    margin-top: 0 10%;
+  margin-top: 0 10%;
 }
 
 .second {
-    margin-top: 0 10%;
+  margin-top: 0 10%;
 }
 
 .buttons {
-    display: flex;
-    justify-content: space-around;
-    margin: 10% 15%;
+  display: flex;
+  justify-content: space-around;
+  margin: 10% 15%;
 }
 
 .pie {
-    margin: 5% 35%;
-    background: white;
-    height: 10rem;
+  margin: 5% 35%;
+  background: white;
+  height: 10rem;
 }
 
 .ray {
-    color: red;
+  color: red;
 }
