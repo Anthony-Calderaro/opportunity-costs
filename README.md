@@ -1,9 +1,9 @@
-# opportunity-costs
-Trello Board: https://trello.com/b/ItQ6UYOD/opportunity-costs
+https://opportunity-costs.firebaseapp.com/
+<br />
+<h1>About:</h1>
+This app was made to showcase the different aspects of financial decision-making: Return, Cost, and Risk. The user walks through hypothetical situations and realize their own intuitive understanding of these concepts, and see how other users responded to the same questions, all updated in real-time.  
+<br /> 
+<br />
+This is a full-stack application built using ReactJS (https://reactjs.org/) and Firebase (http://firebase.google.com/) to handle the real-time updates of the vote counts. Chartjs (https://www.chartjs.org/) and React ChartJS(https://github.com/reactjs/react-chartjs) are also used for visualizing the data in the pie charts.    
 
-CDM -> Pull yes and no votes to set inital state
-Handlesubmit -> Update respective state vote by 1
-            -> Push new state to DB
-            -> Update graphs dynamically
 
-Add CSS animations for rays shining, rain pouring, coin flips, charts loads, scrolling down, arrow popping up after a certain time on each page and fading out beyond a certain point of the page.
