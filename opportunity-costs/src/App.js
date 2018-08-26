@@ -82,9 +82,7 @@ class App extends Component {
       .then(() => {
         let x =
           this.state.round1Yes +
-          this.state.round1No +
-          this.state.round2Yes +
-          this.state.round2No;
+          this.state.round1No 
         this.setState({
           total: x
         });
@@ -164,54 +162,47 @@ class App extends Component {
               A Brief Introduction To Risks, Returns, & Costs
             </h2>
           </div>
-          <i className="fas fa-arrow-circle-down downArrow" />
+          <a href="#down" className="fas fa-arrow-circle-down downArrow" />
 
+          <div id="down"> </div>
           <div className="second">
             <div className="rainMatrix">
               <div className="rainRow1">
-                <i class="fas fa-tint drop" />
-                <i class="fas fa-tint drop2" />
-                <i class="fas fa-tint drop2" />
-                <i class="fas fa-tint drop0" />
+                <i class="fas fa-tint drop" /><i class="fas fa-tint drop2" /><i class="fas fa-tint drop2" /><i class="fas fa-tint drop0" />
               </div>
               <div className="rainRow2">
-                <i class="fas fa-tint drop2" />
-                <i class="fas fa-tint drop" />
-                <i class="fas fa-tint drop0" />
-                <i class="fas fa-tint drop2" />
+                <i class="fas fa-tint drop2" /><i class="fas fa-tint drop" /><i class="fas fa-tint drop0" /><i class="fas fa-tint drop2" />
               </div>
               <div className="rainRow1">
-                <i class="fas fa-tint drop0" />
-                <i class="fas fa-tint drop2" />
-                <i class="fas fa-tint drop2" />
-                <i class="fas fa-tint drop" />
+                <i class="fas fa-tint drop0" /><i class="fas fa-tint drop2" /><i class="fas fa-tint drop2" /><i class="fas fa-tint drop" />
               </div>
             </div>
             <div className="brelly">&#9730;</div>
 
             <div className="text">
               You're probably already familiar with the financial concepts of
-              risk and cost. Have you ever looked outside when it wasn't
+              risks, returns, and costs, but they exist in non-financial domains as well. Have you ever looked outside when it wasn't
               raining, noticed it was overcast, and grabbed an umbrella before
               walking outside just in case? Have you ever been driving quickly
               around a bend, and slowed down just in case there was a speed trap
-              out of view? These are examples of decisions we make at the margin
-              which involve a basic understanding of risks and costs. No one
-              necessarily teaches us these concepts, but through a combination
+              around the corner? These are examples of decisions we make
+              which involve a basic understanding of these concepts. No one
+              necessarily taught them to us in a formal setting, but through a combination
               of intuition and experience, we learn to make these assessments in
               real-time.
             </div>
           </div>
-          <i className="fas fa-arrow-circle-down downArrow" />
+          <a href="#down2" className="fas fa-arrow-circle-down downArrow" />
 
+          <div id="down2"> </div>
           <div className="third">
             <div className="text">
               But what exactly is the different between a risk and a cost?
               Before diving into technical definitions, let's see if we can't
-              highlight the difference with 2 quick scenarios. In our first
+              highlight the difference with 2 quick examples. In our first
               example, let's assume that you have two options. Select option
               one, and you receive $1. Select option two, and a fair coin is
-              flipped: heads, you get $2; tails, you get nothing! Which would
+              flipped: heads, you get $2; tails, you get nothing. Which would
               you choose?
             </div>
             <div className="buttons">
@@ -220,9 +211,10 @@ class App extends Component {
                 Option 2
               </button>
             </div>
-            <i className="fas fa-arrow-circle-down downArrow lower" />
+            <a href="#down3" className="fas fa-arrow-circle-down downArrow lower" />
           </div>
 
+          <div id="down3"> </div>
           <div className="fourth">
             <div className="text">
               Interesting choice! So far, there have been {this.state.total}{" "}
@@ -235,12 +227,12 @@ class App extends Component {
               round1No={this.state.round1No}
             />
 
-            <div className="text">
-              This is just a single data point, so let's do one more scenario
-              and see if we can find some interesting correlations!
+            <div className="text sub">
+              A single data point isn't very insightful...so let's do one more!
             </div>
-            <i className="fas fa-arrow-circle-down downArrow pieArrow" />
+            <a href="#down4" className="fas fa-arrow-circle-down downArrow pieArrow" />
 
+            <div id="down4"> </div>
             <div className="text round2">
               Let's take the same scenario as above, but change the dollar
               amounts. If you select option 1, you get $1 million. Select option
@@ -249,23 +241,19 @@ class App extends Component {
             </div>
             <div className="buttons">
               <button onClick={this.handleSubmitRound2Yes}>Option 1</button>
-              <button className="b2" onClick={this.handleSubmitRound2No}>
-                Option 2
-              </button>
+              <button className="b2" onClick={this.handleSubmitRound2No}>Option 2</button>
             </div>
           </div>
-          <i className="fas fa-arrow-circle-down downArrow lower" />
+          <a href="#down5" className="fas fa-arrow-circle-down downArrow lower" />
 
+          <div id="down5"> </div>
           <div className="fifth">
             <div className="text">
               Interesting pick! Here's another breakdown of the options from
               each scenario:
             </div>
 
-            <PieChart2
-              round2Yes={this.state.round2Yes}
-              round2No={this.state.round2No}
-            />
+            <PieChart2 round2Yes={this.state.round2Yes} round2No={this.state.round2No} />
 
             <div className="text break">
               What's particularly interesting is that a larger portion of
@@ -273,34 +261,39 @@ class App extends Component {
               winnings jumped to $2 million, fewer selected that option. Why do
               you think this is?
             </div>
-            <i className="fas fa-arrow-circle-down downArrow higher" />
+            {/* <i className="fas fa-arrow-circle-down downArrow higher" />
+            
+            <div> </div>
+            <div> </div>
+            <div> </div>
+            <div> </div> */}
             <div className="text">
               Remember when I mentioned people understand things like risk and
               cost intuitively? This is another example showcasing that! The
-              first option had immaterial amounts - $1 and $2. Because the
+              first option had immaterial amounts - 1 or 2 dollars isn't really going to break the bank. Because the
               amounts are negligible, the cost associated with accepting the
-              risk of the second option is negligible, and people would tend to
+              risk of the second option is also negligible, and people may tend to
               go for a higher return when the actual cost is lower. But when the
-              amounts become material - say, $1 million or $2 million - the
+              amounts become material - such as in the second example where $1 million was on the line - the
               opportunity costs of choosing the second option is a guarenteed $1
-              million, which as of 2018 is a reasonably large sum of money!
-              You probably noticed that both scenarios have the exact same risk
-              percentage (100% for option 1, 50% for option 2) and the exact same
-              expected return ($1 or $1 million), and yet people still made different
-              selections based on the actual costs of each decision.
+              million! (Which is a ton of money for most people in 2018). You
+              probably noticed that in each example, the expected return was the same, and the risk of choosing option 2 was the same percentage. Despite this, some people who were risk-seeking in example 1 became risk-averse in example 2. One possible explanation for this could be
+              that the actual costs of each decision were different - the cost of option 2 in the first example was $1. In the second example, the cost of option 2 was $1 million. This isn't
+              an exact science, but it's an insightful exercise nonetheless!
             </div>
             <div className="text">
-              The main point of this is to show that we intuitively analyze
-              risk, return, and cost when making decisions. Unfortunately, modern
-              portfolio managers will still emphasize metrics like "rate of return" or ", without giving as
-              much consideration to the costs or risks of the portfolio. I
-              developed another application called
-              <span className="ray">Ray</span>, which helps investors compare
-              the risk-adjusted yield of individual investments.
+              The main point of this is to show that we intuitively understand
+              and are capable of analyzing risks, returns, and costs when making
+              personal and financial decisions. In the financial world, there
+              seems to be a tendency for portfolio managers to emphasize metrics
+              like rate of return without considering the costs or risks of
+              comprable investments, which is misleading at best since it exposes their clients to uncessesary risk and cost. I'm in the process of
+              developing an application called {""}
+              <a target="#_blank" href="" className="ray">Ray</a>, which will hopefully help investors compare
+              the risk-adjusted rate of return on various publicly traded investments.
+              {/* Feel free to try it out - oh, and it's 100% free! */}
             </div>
-          </div>
-          <div className="footer">
-            Made with <span>&#9752;</span> by <span>Lucky Labs</span>
+          <div className="footer">Made with <span className='shamrock'>&#9752;</span> by Anthony {/*from <span>Lucky Labs</span>*/} </div>
           </div>
         </div>
       </div>

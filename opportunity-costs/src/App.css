@@ -1,5 +1,5 @@
 body {
-    font-family: Helvetica;
+  font-family: Helvetica;
 }
 #logo {
   position: absolute;
@@ -74,15 +74,15 @@ h2 {
 }
 
 .pieArrow {
-    margin: 2% 49%;
+  margin: 2% 49%;
 }
 
 .lower {
-    margin: 10% 49%;
+  margin: 8.5% 49%;
 }
 
 .higher {
-    margin: 1% 49%;
+  margin: 1% 49%;
 }
 .rainMatrix {
   margin: 0% 30%;
@@ -110,49 +110,49 @@ h2 {
 }
 
 @keyframes flickerAnimation {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 1;
   }
-  @-o-keyframes flickerAnimation {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  50% {
+    opacity: 0;
   }
-  @-moz-keyframes flickerAnimation {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  100% {
+    opacity: 1;
   }
-  @-webkit-keyframes flickerAnimation {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+}
+@-o-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
   }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 .drop2 {
   color: rgb(97, 218, 251);
@@ -227,39 +227,59 @@ h2 {
 }
 
 button {
-    padding: 4%;
-    color: rgb(50, 50, 50);
-    background: rgb(97, 218, 251);
-    border-radius: 5%;
-    border: rgb(97, 218, 251);
-    font-size: 1rem;
+  padding: 4%;
+  color: rgb(50, 50, 50);
+  background: rgb(97, 218, 251);
+  border-radius: 5%;
+  border: rgb(97, 218, 251);
+  font-size: 1rem;
 }
 
+button:active {
+  background-color:white;
+  
+}
 .round2 {
-    margin-top: 10%;
+  margin-top: 10%;
 }
 
 .third {
   margin-top: 0% 10%;
 }
 
-.second, .fifth {
+.second,
+.fifth {
   margin-top: 0% 10%;
 }
 
 .break {
-    margin-bottom: 5%;
+  margin-bottom: 5%;
 }
 
 .ray {
-  color: red;
+  color: rgb(0, 158, 96);
 }
-.footer {
-    color: green;
-    margin: 4% 35%;
-  }
-  
 
-  .b2 {
-      background: goldenrod;
-  }
+.footer {
+  padding: 4% 42.5%;
+  color: rgb(225, 225, 225);
+  opacity: 10%;
+}
+
+.shamrock{
+  color: rgb(0, 158, 96);
+  font-size: 150%;
+}
+
+.b2 {
+  background: goldenrod;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sub {
+  margin-left: 35%;
+  font-size: 1.1rem;
+}
