@@ -1,9 +1,8 @@
 # opportunity-costs
-Trello Board: https://trello.com/b/ItQ6UYOD/opportunity-costs
 
-CDM -> Pull yes and no votes to set inital state
-Handlesubmit -> Update respective state vote by 1
-            -> Push new state to DB
-            -> Update graphs dynamically
+About:
+This app was made to showcase the different aspects of financial decision-making: Return, Cost, and Risk. By using contrived hypothetical situations, the user can walk through their own intuitive understanding of these concepts, and see how other users responded to the same questions, updated in real time. 
 
-Add CSS animations for rays shining, rain pouring, coin flips, charts loads, scrolling down, arrow popping up after a certain time on each page and fading out beyond a certain point of the page.
+This is a full-stack application built using ReactJS and a Firebase backend to handle the real-time updates of the vote counts. Chartjs (chartjs.org) and React ChartJS(https://github.com/reactjs/react-chartjs) are also used for visualizing the data in the pie charts.    
+
+
