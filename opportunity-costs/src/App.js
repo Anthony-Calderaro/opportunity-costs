@@ -183,9 +183,9 @@ class App extends Component {
               You're probably already familiar with the financial concepts of
               risks, returns, and costs, but they exist in non-financial domains as well. Have you ever looked outside when it wasn't
               raining, noticed it was overcast, and grabbed an umbrella before
-              walking outside just in case? Have you ever been driving quickly
-              around a bend, and slowed down just in case there was a speed trap
-              around the corner? These are examples of decisions we make
+              walking out just in case it rains? Have you ever been driving quickly
+              around a corner, and slowed down just in case there was a speed trap
+              on the other side? These are examples of decisions we make
               which involve a basic understanding of these concepts. No one
               necessarily taught them to us in a formal setting, but through a combination
               of intuition and experience, we learn to make these assessments in
@@ -197,7 +197,7 @@ class App extends Component {
           <div id="down2"> </div>
           <div className="third">
             <div className="text">
-              But what exactly is the different between a risk and a cost?
+              But what exactly is the difference between a risk and a cost?
               Before diving into technical definitions, let's see if we can't
               highlight the difference with 2 quick examples. In our first
               example, let's assume that you have two options. Select option
